@@ -227,10 +227,12 @@ private:
 	sf::RenderWindow myWindow;
 	sf::CircleShape myPlayer;
 	bool movingLeft = 0, movingUp = 0, movingRight = 0, movingDown = 0, shot = 0;
-	char *direction = new char[0];
+	
 	Sphere spheres[100];
 
 	int i = 0; float t = 0.1;
+	
+	char *direction = new char[0];
 
 };
 
