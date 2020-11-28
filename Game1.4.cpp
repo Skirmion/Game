@@ -241,7 +241,7 @@ private:
 
 	Sphere spheres1[30]; Sphere spheres2[30];
 
-	int i = 0; int g = 0; float t = 0.3;
+	int i = 0; int g = 0; float t = 0.1;
 
 	string direction1 = { 0,0 }; string direction2 = { 0,0 }; 
 
@@ -310,7 +310,7 @@ void Game::update()
 	if (movingDown1) movement1.y += 10.f;
 	if (movingLeft1) movement1.x -= 10.f;
 	if (movingRight1) movement1.x += 10.f;
-	if (shot1 and (direction1[0] != 0 or direction1[1] != 0)) { spheres1[i] = Sphere(), pos1 = myPlayer1.getPosition(); spheres1[i] = { {pos1.x + myPlayer1.getRadius(), pos1.y + myPlayer1.getRadius()} , {float(100 * direction1[0]), float(100 * direction1[1])},  {0, 0}, 10, 255, 0, 0, 10}; i += 1;};
+	if (shot1 and (direction1[0] != 0 or direction1[1] != 0)) { spheres1[i] = Sphere(), pos1 = myPlayer1.getPosition(); spheres1[i] = { {pos1.x + myPlayer1.getRadius(), pos1.y + myPlayer1.getRadius()} , {float(200 * direction1[0]), float(200 * direction1[1])},  {0, 0}, 10, 255, 0, 0, 10}; i += 1;};
 	if (i == 30) i = 0;
 
 	sf::Vector2f movement2(0.f, 0.f);
@@ -319,7 +319,7 @@ void Game::update()
 	if (movingDown2) movement2.y += 10.f;
 	if (movingLeft2) movement2.x -= 10.f;
 	if (movingRight2) movement2.x += 10.f;
-	if (shot2 and (direction2[0] != 0 or direction2[1] != 0)) { spheres2[g] = Sphere(), pos2 = myPlayer2.getPosition(); spheres2[g] = { {pos2.x + myPlayer2.getRadius(), pos2.y + myPlayer2.getRadius()} , {float(100 * direction2[0]), float(100 * direction2[1])},  {0, 0}, 10, 0, 0, 255, 10 }; g += 1; };
+	if (shot2 and (direction2[0] != 0 or direction2[1] != 0)) { spheres2[g] = Sphere(), pos2 = myPlayer2.getPosition(); spheres2[g] = { {pos2.x + myPlayer2.getRadius(), pos2.y + myPlayer2.getRadius()} , {float(200 * direction2[0]), float(200 * direction2[1])},  {0, 0}, 10, 0, 0, 255, 10 }; g += 1; };
 	if (g == 30) g = 0;
 
 	myPlayer1.move(movement1);
